@@ -4,8 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 
 @Entity
+@XmlRootElement(name = "User")
 public class User {
 
 	private Long id;
@@ -26,6 +30,7 @@ public class User {
 
 	@Id
 	@GeneratedValue
+	@XmlElement
 	public Long getId() {
 		return id;
 	}
@@ -36,6 +41,7 @@ public class User {
 	}
 
 
+	@XmlElement
 	public String getName() {
 		return name;
 	}
@@ -47,6 +53,7 @@ public class User {
 
 
 	@OneToOne
+	@XmlElement
 	public Card getCard() {
 		return card;
 	}

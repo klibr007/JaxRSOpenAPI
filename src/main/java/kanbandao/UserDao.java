@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
 import fr.istic.taa.jaxrs.dao.generic.EntityManagerHelper;
+import fr.istic.taa.jaxrs.dao.generic.IGenericDao;
 import kanbanjpa.User;
 
 
