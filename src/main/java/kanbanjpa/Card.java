@@ -11,8 +11,14 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
+@XmlRootElement(name = "Card")
 public class Card implements Serializable{
 	
 	private Long id;
@@ -47,6 +53,7 @@ public class Card implements Serializable{
 
 	@Id
 	@GeneratedValue
+	@XmlElement
 	public Long getId() {
 		return id;
 	}
@@ -54,7 +61,8 @@ public class Card implements Serializable{
 	public void setId(Long id) {
 		this.id = id;
 	}
-
+	
+	@XmlElement
 	public String getLabel() {
 		return label;
 	}
@@ -62,7 +70,8 @@ public class Card implements Serializable{
 	public void setLabel(String label) {
 		this.label = label;
 	}
-
+	
+	@XmlElement
 	public Date getDate() {
 		return date;
 	}
@@ -70,8 +79,10 @@ public class Card implements Serializable{
 	public void setDate(Date date) {
 		this.date = date;
 	}
-
+	
 	@OneToOne(mappedBy = "card" , cascade = CascadeType.PERSIST)
+	@XmlElement
+	@JsonIgnore
 	public User getUser() {
 		return user;
 	}
@@ -80,6 +91,7 @@ public class Card implements Serializable{
 		this.user = user;
 	}
 
+	@XmlElement
 	public int getDurating() {
 		return durating;
 	}
@@ -89,6 +101,9 @@ public class Card implements Serializable{
 	}
 
 	@OneToMany(mappedBy = "card", cascade = CascadeType.PERSIST)
+	@JsonIgnore
+	@XmlElementWrapper(name = "tags")
+	@XmlElement(name = "tag")
 	public List<Tag> getTags() {
 		return tags;
 	}
@@ -97,6 +112,7 @@ public class Card implements Serializable{
 		this.tags = tags;
 	}
 
+	@XmlElement
 	public String getLocation() {
 		return location;
 	}
@@ -105,6 +121,7 @@ public class Card implements Serializable{
 		this.location = location;
 	}
 
+	@XmlElement
 	public String getUrl() {
 		return url;
 	}
@@ -113,6 +130,7 @@ public class Card implements Serializable{
 		this.url = url;
 	}
 
+	@XmlElement
 	public String getDescription() {
 		return description;
 	}
@@ -122,6 +140,8 @@ public class Card implements Serializable{
 	}
 
 	@ManyToOne
+	@XmlElement
+	@JsonIgnore
 	public Section getSection() {
 		return section;
 	}

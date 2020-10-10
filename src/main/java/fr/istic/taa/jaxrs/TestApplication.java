@@ -23,6 +23,7 @@ import javax.ws.rs.core.Application;
 
 import fr.istic.taa.jaxrs.rest.PetResource;
 import io.swagger.v3.jaxrs2.integration.resources.OpenApiResource;
+import kanbanrest.CardResource;
 import kanbanrest.UserResource;
 
 public class TestApplication extends Application {
@@ -36,6 +37,7 @@ public class TestApplication extends Application {
         clazzes.add(PetResource.class);
         clazzes.add(OpenApiResource.class);
         clazzes.add(UserResource.class);
+        clazzes.add(CardResource.class);
         clazzes.add(SwaggerResource.class);
         
 
