@@ -1,6 +1,7 @@
 package kanbanjpa;
 
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -11,7 +12,7 @@ import javax.persistence.OneToMany;
 
 
 @Entity
-public class Board {
+public class Board implements Serializable{
 
 	private Long id;
 	private String name;

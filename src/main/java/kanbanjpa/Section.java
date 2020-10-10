@@ -2,6 +2,7 @@ package kanbanjpa;
 
 
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -10,8 +11,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
 @Entity
-public class Section {
+public class Section implements Serializable{
 
 	private Long id;
 	private String name;

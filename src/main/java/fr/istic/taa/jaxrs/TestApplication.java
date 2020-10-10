@@ -36,6 +36,7 @@ public class TestApplication extends Application {
         clazzes.add(PetResource.class);
         clazzes.add(OpenApiResource.class);
         clazzes.add(UserResource.class);
+        clazzes.add(SwaggerResource.class);
         
 
         return clazzes;
