@@ -41,7 +41,7 @@ public class UserResource {
 
 	@DELETE
 	@Path("/{userId}")
-	public Response deleteUserById(@PathParam("UserId") Long UserId)  {
+	public Response deleteUserById(@PathParam("userId") Long UserId)  {
 		
 		UserDao userDao = new UserDao();
 		User user = userDao.findOne(UserId);
@@ -50,7 +50,7 @@ public class UserResource {
 		}
 		else {
 			userDao.deleteById(UserId);;
-			return Response.ok().build();
+			return Response.ok().entity("SUCCESS").build();
 		}
 	    
 	}
