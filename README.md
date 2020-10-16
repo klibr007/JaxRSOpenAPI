@@ -6,7 +6,6 @@ Les deux ressources qui ont été rendues disponibles sont celles liées aux uti
 1. de rechercher un utilisateur ou une carte par un id (méthode GET)
 2. de créer un utilisateur ou une carte en mettant dans le body JSON correspondant à l'objet qu'on souhaite créé (méthode POST)
 3. de supprimer une ressource grâce à son id (méthode DELETE)
-4. Start the backend. There is a main class to start the backend
 
 
 Pour tester il faudra comme dans le tp précédent lancer dans un terminal les fichiers run-hsqldb-server.sh et show-hsqldb.sh. Lancer ensuite le server grâce à la classe src/main/java/fr/istic/taa/jaxrs/RestServer.java. Lancer POSTMAN pour effectuer des requêtes.
