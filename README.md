@@ -1,3 +1,14 @@
+# Résumé de ce qui a été fait
+Dans ce deuxième tp toutes les questions ont été abordées. Les packages kanbandao, kanbanjpa, kanbanrest contiennent respectivement les parties dao, domain et rest du premier tp.
+
+# Quoi tester et comment?
+Les deux ressources qui ont été rendues disponibles sont celles liées aux utilisateurs et aux cartes. Il est possible:
+-de rechercher un utilisateur ou une carte par un id (méthode GET)
+-de créer un utilisateur ou une carte en mettant dans le body JSON correspondant à l'objet qu'on souhaite créé (méthode POST)
+-de supprimer une ressource grâce à son id (méthode DELETE)
+Pour tester il faudra comme dans le tp précédent lancer dans un terminal les fichiers run-hsqldb-server.sh et show-hsqldb.sh. Lancer ensuite le server grâce à la classe src/main/java/fr/istic/taa/jaxrs/RestServer.java. Lancer POSTMAN pour effectuer des requêtes.
+
+
 ## JaxRS + openAPI
 
 1. Import this project in your IDE, 
